@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'tokyo-olympics-management-db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - tokyo-olympics-management-db:/var/lib/mysql
+volumes:
+  tokyo-olympics-management-db:
